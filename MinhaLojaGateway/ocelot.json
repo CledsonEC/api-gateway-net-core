@@ -1,0 +1,30 @@
+{
+    "ReRoutes": [
+        {
+            "DownstreamPathTemplate": "/api/{catchAll}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                    {
+                        "Host": "localhost",
+                        "Port": 7001
+                    }
+                ],
+            "UpstreamPathTemplate": "/produtos-api/{catchAll}"            
+        },
+        {
+            "DownstreamPathTemplate": "/api/{catchAll}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                    {
+                        "Host": "localhost",
+                        "Port": 7002
+                    }
+                ],
+            "UpstreamPathTemplate": "/clientes-api/{catchAll}"            
+        }
+
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7000"
+    }
+}
